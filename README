@@ -1,5 +1,7 @@
 
-# Setup
+# Django ecommerce project
+
+## Setup
 1. python -m venv venv
 2. source venv/bin/activate
 3. python3 -m pip install --upgrade pip
