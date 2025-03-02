@@ -11,8 +11,9 @@ __pycache__/
 db.sqlite3
 
 # Media and static files
-media/
-static/
+# media/
+# static/
+static/media
 
 # Sensitive information
 .env
