@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-	  <title> Edenthought </title>
+	  <title> Django ecommerce </title>
 
 
 
@@ -51,7 +51,7 @@
 
         <a class="navbar-brand main-heading text-white" href="{% url 'store' %}"> 
                 
-        &nbsp; &nbsp; Edenthought 
+        &nbsp; &nbsp; Django ecommerce 
         
         </a>
 
@@ -113,19 +113,33 @@
             
             <ul class="navbar-nav ms-auto">
 
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
 
-                <li class="nav-item">
-            
-                    <a class="btn btn-alert navbar-btn text-white" type="button"  href="{% url 'account.register' %}"> Register </a>
+                        <a class="btn btn-alert navbar-btn text-white" type="button"  href="{% url 'account.dashboard' %}"> Dashboard </a>
 
-                </li>
+                    </li>
 
+                    <li class="nav-item">
 
-                <li class="nav-item">
+                        <a class="btn btn-alert navbar-btn text-white" type="button"  href="{% url 'account.user-logout' %}"> Logout </a>
 
-                    <a class="btn btn-alert navbar-btn text-white" type="button"  href="{% url 'account.my-login' %}"> Login </a>
+                    </li>
+                
+                {% else %}
+                
+                    <li class="nav-item">
+                
+                        <a class="btn btn-alert navbar-btn text-white" type="button"  href="{% url 'account.register' %}"> Register </a>
 
-                </li>
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="btn btn-alert navbar-btn text-white" type="button"  href="{% url 'account.my-login' %}"> Login </a>
+
+                    </li>
+                {% endif %}
 
 
                 &nbsp; &nbsp; &nbsp;
