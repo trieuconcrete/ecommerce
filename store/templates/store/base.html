@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-	  <title> Django ecommerce </title>
+	  <title> Django E-commerce </title>
 
 
 
@@ -48,10 +48,9 @@
 
     <nav class="navbar navbar-expand-lg bg-primary justify-content-center">
 
-
         <a class="navbar-brand main-heading text-white" href="{% url 'store' %}"> 
                 
-        &nbsp; &nbsp; Django ecommerce 
+        &nbsp; &nbsp; Django E-commerce 
         
         </a>
 
@@ -68,7 +67,6 @@
         <span class="navbar-toggler-icon"></span>
 
     </button>
-
     
         <div class="collapse navbar-collapse" id="navbarCollapse">
                 
@@ -183,27 +181,38 @@
 
     </nav>
 
+    {% for message in messages %}
+
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+            <h6 id="message-timer" class="alert alert-success text-center">{{ message }}</h6>
+        
+        {% endif %}
+
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+
+            <h6 id="message-timer" class="alert alert-danger text-center">{{ message }}</h6>
+        
+        {% endif %}
+
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+
+            <h6 id="message-timer" class="alert alert-info text-center">{{ message }}</h6>
+        
+        {% endif %}
+
+    {% endfor %}
 
     <body>
 
-
         {% block content %} 
         
-        
-
-
-
-
-
-            
         {% endblock %}
     
-        
-
-
     </body>
 
 
+    <script src="{% static "js/app.js" %}"></script>
 </html>
 
 

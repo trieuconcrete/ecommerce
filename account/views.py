@@ -11,7 +11,7 @@ from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
-
+from django.contrib import messages
 
 # Create your views here.
 def register(request):
@@ -96,7 +96,20 @@ def my_login(request):
 
 
 def user_logout(request):
-    auth.logout(request)
+    # auth.logout(request)
+    try :
+        for key in list(request.session.keys()):
+            if key == 'session_key':
+
+                continue
+            else:
+
+                del request.session[key]
+    except KeyError:
+
+        pass
+
+    messages.success(request, 'Logout success!')
 
     return redirect('store')
 
@@ -117,6 +130,8 @@ def profile_management(request):
 
         if user_form.is_valid():
             user_form.save()
+
+            messages.info(request, 'Account updated!')
 
             return redirect('account.dashboard')
 
