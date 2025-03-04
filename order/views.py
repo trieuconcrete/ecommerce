@@ -35,6 +35,8 @@ def complete_order(request):
 
     if request.POST.get('action') == 'post':
 
+        status = request.POST.get('status')
+        payment_method = request.POST.get('payment_method')
         name = request.POST.get('name')
         email = request.POST.get('email')
         address1 = request.POST.get('address1')
@@ -106,6 +108,8 @@ def complete_order(request):
             "email": email,
             "shipping_address": shipping_address,
             "amount_paid": total_cost,
+            "status": status,
+            "payment_method": payment_method,
         }
 
         # Add user for authenticated users

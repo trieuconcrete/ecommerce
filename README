@@ -2,8 +2,45 @@
 # Django ecommerce project
 
 ## Setup
+
 1. python -m venv venv
 2. source venv/bin/activate
 3. python3 -m pip install --upgrade pip
 4. django-admin startproject ecommerce
 5. cd ecommerce
+
+## Paypal
+
+PayPal links:
+
+Create a PayPal account
+
+Create a Sandbox account[https://developer.paypal.com/home/] <- You must first have a PayPal account to login to create your Sandbox accounts.
+
+Login to your Sandbox accounts[https://www.sandbox.paypal.com/myaccount/summary]
+
+PayPal API and documentation (Useful as a general reference ONLY)
+
+Customize the PayPal buttons
+
+Validate user input
+
+---------------------------------------
+
+Additional note: Please refer to the below for the lecture on testing payments with a debit/credit card.
+
+For Sandbox mode:
+
+Test credit card details:
+
+Dummy card:
+
+4032032685528157
+
+Dummy phone number:
+
+203-555-0134
+
+
+account Sendbox test
+sb-43ipcc38300639@personal.example.com/Z$br,@%2

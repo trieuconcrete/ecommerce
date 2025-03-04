@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from .forms import CreateUserForm, LoginForm, UpdateUserForm
 from order.forms import ShippingForm
-from order.models import ShippingAddress
+from order.models import ShippingAddress, Order, OrderItem
 
 from .token import user_tokenizer_generate
 from django.contrib.sites.shortcuts import get_current_site
@@ -190,3 +190,18 @@ def manage_shipping(request):
     context = {'form': form}
 
     return render(request, 'account/manage_shipping.html', context)
+
+
+@login_required(login_url='account.my-login')
+def track_orders(request):
+
+    try:
+        orders = OrderItem.objects.filter(user=request.user)
+        context = {'orders': orders}
+
+        return render(request, 'account/track_orders.html', context)
+    except:
+
+        return render(request, 'account/track_orders.html')
+
+    

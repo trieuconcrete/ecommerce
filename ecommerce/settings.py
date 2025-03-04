@@ -159,3 +159,6 @@ EMAIL_USE_TLS = 'True'
 # Be sure to read the guide in the resource folder of this lecture (SETUP THE EMAIL BACKEND)
 EMAIL_HOST_USER = 'trieunb.dev@gmail.com' # Enter your gmail address
 EMAIL_HOST_PASSWORD = 'qerr tpqk oaqe qgpc' # Enter your app password
+
+# Allow PayPal Popups
+SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
