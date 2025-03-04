@@ -5,6 +5,9 @@ from cart.cart import Cart
 from .models import Order, OrderItem
 
 from django.http import JsonResponse
+from django.core.mail import send_mail
+
+from django.conf import settings
 
 # Create your views here.
 
@@ -121,6 +124,7 @@ def complete_order(request):
         order_id = order.pk
 
         # Create OrderItems in bulk
+       
         order_items = [
             OrderItem(
                 order_id=order_id,
@@ -131,7 +135,19 @@ def complete_order(request):
             )
             for item in cart
         ]
+        
         OrderItem.objects.bulk_create(order_items)
+
+        product_list = []
+        for item in cart:
+
+            product_list.append(item['product'])
+
+        all_products = product_list
+        # Email order
+        send_mail('Order receied', 'Hi!' + '\n\n' + 'Thanh you for placing your order' + '\n\n' +
+                    'Please see your order below:' + '\n\n' + str(all_products) + '\n\n' + 'Total price: $' +
+                    str(cart.get_total()), settings.EMAIL_HOST_USER, [email], fail_silently=False)
 
         order_success = True
         response = JsonResponse({'success': order_success})
