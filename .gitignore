@@ -32,3 +32,4 @@ cache/
 *.log
 *.pot
 *.pid
+.env

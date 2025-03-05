@@ -21,8 +21,9 @@ class ShippingAddress(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     class Meta:
-
         verbose_name_plural = 'Shipping Address'
+        db_table = 'shipping_address'
+
 
     def __str__(self):
 
@@ -47,6 +48,9 @@ class Order(models.Model):
     # Fk
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
+    class Meta:
+        db_table = 'orders'
+
     def __str__(self):
 
         return 'Order - #' + str(self.id)
@@ -63,6 +67,8 @@ class OrderItem(models.Model):
     # FK
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
+    class Meta:
+        db_table = 'order_items'
 
     def __str__(self):
 

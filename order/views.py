@@ -156,7 +156,6 @@ def complete_order(request):
 
 
 def order_success(request):
-
     for key in list(request.session.keys()):
 
         if key == 'session_key':
