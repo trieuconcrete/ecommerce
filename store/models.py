@@ -8,6 +8,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'categories'
+        db_table = 'categories'
 
     # Category (1), Category (2) # Shirt # Shoes
     def __str__(self):
@@ -27,6 +28,7 @@ class Product(models.Model):
 
     class Meta:
         verbose_name_plural = 'products'
+        db_table = 'products'
 
     # Product (1)
     def __str__(self):
