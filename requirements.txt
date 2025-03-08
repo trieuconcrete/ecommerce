@@ -12,7 +12,6 @@ asgiref==3.8.1
 asttokens==3.0.0
 async-lru==2.0.4
 attrs==24.3.0
-awsebcli==3.21.0
 babel==2.16.0
 beautifulsoup4==4.12.3
 billiard==4.2.1
@@ -54,7 +53,6 @@ django-celery-beat==2.7.0
 django-celery-results==2.5.1
 django-cors-headers==4.6.0
 django-crispy-forms==2.3
--e git+https://github.com/django-commons/django-debug-toolbar.git@a9ac5dc9371de1ecd2394affa2085a2a1427c7eb#egg=django_debug_toolbar
 django-dotenv==1.4.2
 django-filter==25.1
 django-mathfilters==1.0.0
@@ -110,21 +108,6 @@ jupyterlab_server==2.27.3
 jupyterlab_widgets==3.0.13
 kiwisolver==1.4.8
 kombu==5.4.2
-llama-cloud==0.1.7
-llama-index==0.12.9
-llama-index-agent-openai==0.4.1
-llama-index-cli==0.4.0
-llama-index-core==0.12.9
-llama-index-embeddings-openai==0.3.1
-llama-index-indices-managed-llama-cloud==0.6.3
-llama-index-llms-openai==0.3.12
-llama-index-multi-modal-llms-openai==0.4.1
-llama-index-program-openai==0.3.1
-llama-index-question-gen-openai==0.3.0
-llama-index-readers-file==0.4.1
-llama-index-readers-llama-parse==0.4.0
-llama-index-vector-stores-upstash==0.3.0
-llama-parse==0.5.19
 lxml==5.3.0
 Markdown==3.7
 MarkupSafe==3.0.2
@@ -179,7 +162,6 @@ python-decouple==3.8
 python-dotenv==1.0.1
 python-json-logger==3.2.1
 pytz==2024.2
-PyYAML==5.3.1
 pyzmq==26.2.0
 ratelim==0.1.6
 redis==5.2.1
